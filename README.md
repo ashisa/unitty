@@ -1,5 +1,7 @@
 # UniTTY
- UniTTY is a container that unlocks new ways to access a linux shell and automate stuff on Azure. You can customize for other clouds too if you need to.
+ UniTTY is a linux container that unlocks new ways to access a linux shell and automate stuff on Azure. You can customize for other clouds too if you need to.
+
+ Get it from - **docker.io/ashisa/unitty**
 
  It is built on top of the official Docker Python 3.6.10 Debian 10 image - **python:3.6.10-slim-buster**
 
@@ -13,7 +15,7 @@
 You can use for practically anything that you need an Alpine or Debian image today to do. However, the advantage of Unitty is that with ttyd and a little imagonation you automate a lot of things that otherwise requires shell access.
 
 ## How do I get it?
- It's a container image that you can build using the Dockerfile available in this repository or download the pre-built image from Docker Hub - docker.io/ashisa/unitty
+ It's a container image that you can build using the Dockerfile available in this repository or download the pre-built image from Docker Hub - **docker.io/ashisa/unitty**
 
 
 ## Examples
