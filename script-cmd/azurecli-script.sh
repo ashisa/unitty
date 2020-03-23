@@ -2,6 +2,8 @@
 if [ "$1" == "" ] || [ "$2" == "" ]
 then
     echo "syntax: $0 resourcegroup-name vm-name"
+    echo 
+    echo "Send the argument using this URL - http://127.0.0.1:8080/arg=myrg%20myvm01"
 else
     az login
     az group create --name $1 --location southindia
