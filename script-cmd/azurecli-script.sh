@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$1" == ""] || [ "$2" == ""]
+if [ "$1" == "" ] || [ "$2" == "" ]
 then
     echo "syntax: $0 resourcegroup-name vm-name"
 else

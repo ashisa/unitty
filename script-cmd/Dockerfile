@@ -41,4 +41,4 @@ RUN curl https://raw.githubusercontent.com/ashisa/unitty/master/script-cmd/azure
   && chmod a+x ~/azurecli-script.sh
 
 # Running the script as CMD
-CMD [ "/usr/bin/gotty", "--permit-arguments", "~/azurecli-script.sh" ]
+CMD [ "/usr/bin/gotty", "--permit-arguments", "/root/azurecli-script.sh" ]
