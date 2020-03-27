@@ -1,7 +1,6 @@
 #!/bin/bash
-ARG=$1
-RG=$(echo $ARG |awk '{print $1}')
-VM=$(echo $ARG |awk '{print $2}')
+RG=$1
+VM=$2
 if [ "$RG" == "" ] || [ "$VM" == "" ]
 then
     echo "syntax: $0 resourcegroup-name vm-name"
