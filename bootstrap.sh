@@ -17,8 +17,8 @@ else
                 scriptName=$(echo $1 |awk -F/ '{print $NF}')
                 curl -Lsq $1 -o /root/$scriptName
                 chmod a+x /root/$scriptName
-                echo $scriptName |grep .sh$ && bash -c /root/$scriptName
-                echo $scriptName |grep .ps1$ && pwsh -c /root/$scriptName
+                echo $scriptName |grep .sh$ && /bin/bash -c "/root/$scriptName $2 $3 $4 $5"
+                echo $scriptName |grep .ps1$ && /usr/bin/pwsh -c "/root/$scriptName $2 $3 $4 $5"
         else
                 for i in $*
                 do
