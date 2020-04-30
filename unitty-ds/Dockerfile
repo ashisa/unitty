@@ -31,6 +31,9 @@ RUN mkdir -p /opt/microsoft/powershell/7 \
 # Installing Az module
 RUN pwsh -c install-module -Force Az
 
+# Installing Az module
+RUN pwsh -c install-module -Force Az.DataShare
+
 # Copying the bootstrap.sh script to eliminate Dockerfile customization
 COPY bootstrap.sh /root/bootstrap.sh
 
