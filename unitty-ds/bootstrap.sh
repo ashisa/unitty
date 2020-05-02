@@ -9,7 +9,7 @@ then
         echo "http://host-ip-or-name:port-number/?arg=command1&arg=command2 command2-args"
         echo ""
         echo "syntax 2:"
-        echo "http://host-ip-or-name:port-number/?arg=https://github-script-link-to-download-and-execute"
+        echo "http://host-ip-or-name:port-number/?arg=https://github-script-link-to-download-and-execute&arg=arg1&arg=arg2"
 else
         echo $1 |grep -q https
         if [ $? -eq 0 ]
@@ -20,9 +20,9 @@ else
                 echo $scriptName |grep .sh$ && /bin/bash -c "/root/$scriptName $2 $3 $4 $5"
                 echo $scriptName |grep .ps1$ && /usr/bin/pwsh -c "/root/$scriptName $2 $3 $4 $5"
         else
-                for i in $*
+                for i in "$@"
                 do
-                        bash -c $i
+                        bash -c "$i"
                 done
         fi
 fi
