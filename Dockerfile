@@ -31,6 +31,11 @@ RUN mkdir -p /opt/microsoft/powershell/7 \
 # Installing Az module
 RUN pwsh -c install-module -Force Az
 
+# Setting up GoTTY
+RUN echo -e 'title_format = "UniTTY" \npreferences { \n  foreground_color = "rgb(16, 16, 16)" ' \
+  && echo -e '  close_on_exit = true \n  clear_selection_after_copy = true \n  ctrl_c_copy = true \n  ctrl_v_paste = true ' \
+  && echo -e '  background_color = "rgb(240, 240, 240)" \n }' >/root/.gotty
+
 # Copying the bootstrap.sh script to eliminate Dockerfile customization
 COPY bootstrap.sh /root/bootstrap.sh
 
