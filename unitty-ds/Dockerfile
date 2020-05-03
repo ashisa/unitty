@@ -35,9 +35,9 @@ RUN pwsh -c install-module -Force Az
 RUN pwsh -c install-module -Force Az.DataShare
 
 # Setting up GoTTY
-RUN echo -e 'title_format = "UniTTY" \npreferences { \n  foreground_color = "rgb(16, 16, 16)" ' |tee /root/.gotty \
-  && echo -e '  close_on_exit = true \n  clear_selection_after_copy = true \n  ctrl_c_copy = true \n  ctrl_v_paste = true ' |tee -a /root/.gotty \
-  && echo -e '  background_color = "rgb(240, 240, 240)" \n }' |tee -a /root/.gotty
+RUN echo 'title_format = "UniTTY" \npreferences { \n  foreground_color = "rgb(16, 16, 16)" ' |tee /root/.gotty \
+  && echo '  close_on_exit = true \n  clear_selection_after_copy = true \n  ctrl_c_copy = true \n  ctrl_v_paste = true ' |tee -a /root/.gotty \
+  && echo '  background_color = "rgb(240, 240, 240)" \n }' |tee -a /root/.gotty
 
 # Copying the bootstrap.sh script to eliminate Dockerfile customization
 COPY bootstrap.sh /root/bootstrap.sh
