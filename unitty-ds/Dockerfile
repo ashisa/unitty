@@ -46,4 +46,4 @@ COPY bootstrap.sh /root/bootstrap.sh
 RUN rm -fr /tmp/*
 
 EXPOSE 8080
-CMD [ "/usr/bin/gotty", "--permit-arguments", "/root/bootstrap.sh" ]
+CMD [ "/usr/bin/gotty", "--permit-arguments", "--once", "/root/bootstrap.sh" ]
