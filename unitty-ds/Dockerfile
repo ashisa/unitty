@@ -17,6 +17,13 @@ RUN apt-get update \
 # Downloading GoTTY and copying it to /usr/bin
 RUN curl -L https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz | tar zx -C /usr/bin/
 
+# Installing Caddy for automatic HTTPS
+RUN echo "deb [trusted=yes] https://apt.fury.io/caddy/ /" \
+  | tee -a /etc/apt/sources.list.d/caddy-fury.list
+RUN apt-get update \
+  && apt-get install caddy \
+  && apt-get install -y libnss3-tools
+  
 # Installing PowerShell Core prerequisites
 RUN curl -L https://github.com/unicode-org/icu/releases/download/release-66-1/icu4c-66_1-Ubuntu18.04-x64.tgz | tar xz -C /tmp \
   && cp -R /tmp/icu/* / && cp -R /tmp/icu/usr/local/lib/* /usr/lib/ && rm -fr /tmp/icu
